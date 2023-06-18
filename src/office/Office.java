@@ -1,7 +1,6 @@
 package office;
 
 import handler.Handler;
-import handler.PlovdivHandler;
 import package_type.Package;
 
 public class Office {
@@ -19,8 +18,7 @@ public class Office {
         return instance;
     }
 
-    public void handlePackage(Package p) {
-        PlovdivHandler handler = new PlovdivHandler();
+    public void handlePackage(Handler handler, Package p) {
         handler.process(p);
     }
 }

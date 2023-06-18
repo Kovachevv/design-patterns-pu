@@ -19,23 +19,20 @@ public class Main {
         plovdivHandler.setNext(bulgariaHandler);
         bulgariaHandler.setNext(abroadHandler);
 
-        System.out.print("Choose a location: Plovdiv, Bulgaria, Abroad: ");
+        System.out.print("Choose a location - Plovdiv, Bulgaria, Abroad: ");
 
         String input = scanner.nextLine();
 
         Office office = Office.getInstance();
 
-
-        while (!input.equals("End")) {
+        while (!input.equals("end")) {
 
             Package currentPackage = PackagingMachine.createPackage(input.toLowerCase());
 
-            office.handlePackage(currentPackage);
-            System.out.print("Choose a location: Plovdiv, Bulgaria, Abroad: ");
+            office.handlePackage(plovdivHandler, currentPackage);
+            System.out.print("Choose a location - Plovdiv, Bulgaria, Abroad: ");
 
             input = scanner.nextLine();
         }
-
-
     }
 }

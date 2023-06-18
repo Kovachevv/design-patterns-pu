@@ -13,6 +13,7 @@ public class PackagingMachine {
 
     public static Package createPackage(String location) {
 
+        //Може да бъде изнесено към отделни PackagingMachine класове за отделните региони.
         return switch (location.toLowerCase()) {
             case "plovdiv" -> new PlovdivPackage(RecipientLocation.PLOVDIV);
             case "bulgaria" -> new BulgariaPackage(RecipientLocation.BULGARIA);
